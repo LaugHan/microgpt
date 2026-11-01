@@ -1,0 +1,2 @@
+microgpt 对应原始python版本。
+microgpt_torch 对应原始版本的torch版本，不过大部分写法都保留了原本的逻辑。

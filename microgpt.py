@@ -1,5 +1,7 @@
 '''
 最原子版本的训练和推理GPT的python代码，这个文件完成了整个算法。
+
+完成时间 26.11.1
 '''
 
 import os
@@ -134,7 +136,7 @@ def gpt(token_id, pos_id, keys, values):
             # q @ K.t
             attn_weights = softmax(attn_logits)
             head_out = [sum(attn_weights[t] * v_h[t][j] for t in range(len(v_h))) for j in range(head_dim)]
-            x_attn.extend(head_out) # 合并多个头的值
+            x_attn.extend(head_out)
         x = linear(x_attn, state_dict[f'layer{li}.attn_wo'])
         x = [a + b for a, b in zip(x, x_residual)]
 
